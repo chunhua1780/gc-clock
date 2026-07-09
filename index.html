@@ -9225,6 +9225,8 @@ function clkSwitchTab(tab){
   document.querySelectorAll('.clk-panel').forEach(function(p){p.classList.toggle('on',p.id==='clkPanel-'+tab);});
   var ht=document.getElementById('clkHeadTitle');if(ht)ht.textContent=CLK_TITLES[tab]||'';
   var fab=document.getElementById('clkFab');if(fab)fab.style.display=(tab==='alarm')?'flex':'none';
+  // 切换Tab时重置滚动位置，否则从下面滚动过的Tab切过来会顶部留一大片空白
+  var scr=document.getElementById('dclk');if(scr){var db=scr.querySelector('.dp-body');if(db)db.scrollTop=0;}
 }
 
 // ═══ 闹钟 ═══
