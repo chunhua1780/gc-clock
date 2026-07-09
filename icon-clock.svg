@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C9BEFF"/>
+      <stop offset="100%" stop-color="#F8B8D0"/>
+    </linearGradient>
+    <linearGradient id="faceG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F3EEFF"/>
+    </linearGradient>
+    <filter id="faceShadow">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="rgba(90,60,140,0.28)"/>
+    </filter>
+  </defs>
+
+  <!-- 背景圆角方形 -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- 表壳外环 -->
+  <circle cx="256" cy="256" r="172" fill="#8B5CF6" opacity="0.18"/>
+  <!-- 表盘 -->
+  <circle cx="256" cy="256" r="152" fill="url(#faceG)" filter="url(#faceShadow)"/>
+
+  <!-- 刻度：12/3/6/9 -->
+  <g fill="#9C93B4">
+    <rect x="248" y="122" width="16" height="30" rx="8"/>
+    <rect x="248" y="360" width="16" height="30" rx="8"/>
+    <rect x="122" y="248" width="30" height="16" rx="8"/>
+    <rect x="360" y="248" width="30" height="16" rx="8"/>
+  </g>
+
+  <!-- 时针 10点方向 / 分针 2点方向（经典10:10笑脸角度） -->
+  <g stroke-linecap="round">
+    <line x1="256" y1="256" x2="200" y2="196" stroke="#5B5470" stroke-width="16"/>
+    <line x1="256" y1="256" x2="322" y2="188" stroke="#8B5CF6" stroke-width="12"/>
+  </g>
+  <circle cx="256" cy="256" r="14" fill="#5B5470"/>
+</svg>
